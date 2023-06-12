@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="nabeel.views.QuestionPage" Title="نموذج إرسال الأسئلة                                                                                      ">
+
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="Black" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
+
+    <ScrollView><Frame BorderColor="DarkBlue" Margin="30">
+            
+            <VerticalStackLayout Spacing="40">
+                
+                <VerticalStackLayout >
+            <Label Text="الاسم" />
+            <Entry x:Name="name" 
+                   ClearButtonVisibility="WhileEditing" />  
+        </VerticalStackLayout>        
+        
+        <VerticalStackLayout >
+            <Label Text="البريد الإلكتروني" />
+            <Entry x:Name="email" Keyboard="Email" ClearButtonVisibility="WhileEditing" />  
+        </VerticalStackLayout>        
+        
+
+            <StackLayout HorizontalOptions="End">
+                <RadioButton Content="ذكر" x:Name="rm" IsChecked="True" />
+                <RadioButton Content="أنثى" x:Name="rf" />
+            </StackLayout>
+
+                <StackLayout>
+                    <Label Text="اختر المجيب"  />
+
+                    <Picker x:Name="p" FlowDirection="RightToLeft" >
+                        <Picker.Items>
+                            <x:String>حسب المتاح</x:String>
+                            <x:String>واحد</x:String>
+                            <x:String>اثنان</x:String>
+                            <x:String>ثلاثة</x:String>
+                            <x:String>أربعة</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+
+
+                <VerticalStackLayout >
+                <Label Text="عنوان السؤال" />
+                <Entry x:Name="subject" ClearButtonVisibility="WhileEditing" />
+            </VerticalStackLayout>
+
+            <StackLayout Spacing="3">
+                <Label Text="نص السؤال" />
+                <Frame BorderColor="DarkBlue">
+                    <Editor x:Name="message" HeightRequest="250"/>
+                </Frame>
+            </StackLayout>
+        
+
+            <Button Text="إرسال" Clicked="Button_Clicked" />
+          
+        </VerticalStackLayout> </Frame>
+    </ScrollView> 
+</ContentPage>

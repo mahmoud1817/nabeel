@@ -1,0 +1,35 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:nabeel"
+             xmlns:views="clr-namespace:nabeel.views"
+             x:Class="nabeel.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+    <Application.MainPage>
+        <Shell>
+            <TabBar x:Name="tabs">
+                <Tab Title="الرئيسية" Icon="home_icon.svg">
+                    <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+                </Tab>                
+                <Tab Title="إرسال سؤال" Icon="question_mark_icon.svg">
+                    <ShellContent ContentTemplate="{DataTemplate views:QuestionPage}" />
+                </Tab>
+                <Tab Title="منشورات" Icon="article_icon.svg">
+                    <ShellContent ContentTemplate="{DataTemplate views:PostsPage}" />
+                </Tab>
+                <Tab Title="عن التطبيق" Icon="info_icon.svg">
+                    <ShellContent ContentTemplate="{DataTemplate views:AboutPage}" />
+                </Tab>
+            </TabBar>
+        </Shell>
+    </Application.MainPage>
+</Application>

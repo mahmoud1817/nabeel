@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="nabeel.MainPage"
+             Title="الرئيسية                                                                                                           ">
+
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="Black" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <StackLayout Margin="0,5">
+                <Frame BackgroundColor="#eee">
+                <SearchBar Placeholder="أدخل عبارة البحث                                                          " 
+                           PlaceholderColor="DarkSlateGrey"
+                           CancelButtonColor="Black"
+                           BackgroundColor="#E3E1E1" 
+                           TextColor="Black"
+                           FontSize="Header"
+                           x:Name="searchbar"
+                />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout>
+
+                <ListView ItemsSource="{Binding QA}" x:Name="mylist" 
+                          SelectionMode="None" 
+                          FlowDirection="RightToLeft"
+                          RowHeight="100"
+                          SeparatorVisibility="None"
+                          Margin="3"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Question}" Detail="{Binding Scholar }" DetailColor="Black" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </StackLayout>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
